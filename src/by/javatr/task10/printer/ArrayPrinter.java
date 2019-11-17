@@ -1,5 +1,9 @@
 package by.javatr.task10.printer;
 
+/**
+ * Класс, реализующий вывод на печать таблицы для Task 10.
+ */
+
 public class ArrayPrinter {
 
     public static void printMultidimensionalArray(double array[][]){

@@ -15,7 +15,7 @@ public class LineSegment {
         }
 
         if (!Validator.validatePositiveDouble(step)) {
-            throw new IllegalArgumentException("Step should be positive number");
+            throw new IllegalArgumentException("Step have to be positive number");
         }
 
         this.startPoint = startPoint;
@@ -33,5 +33,39 @@ public class LineSegment {
 
     public double getStep() {
         return step;
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if(getClass() != obj.getClass())
+            return false;
+        LineSegment other = (LineSegment) obj;
+        if(startPoint!=other.startPoint)
+            return false;
+        if(endPoint!=other.endPoint)
+            return false;
+        if(step!=other.step)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + Double.valueOf(startPoint).hashCode();
+        result = prime * result + Double.valueOf(endPoint).hashCode();
+        result = prime * result + Double.valueOf(step).hashCode();
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "LineSegment [startPoint=" + startPoint + ", endPoint=" + endPoint + ", step=" + step + ']';
     }
 }

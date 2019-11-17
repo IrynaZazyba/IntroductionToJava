@@ -1,34 +1,19 @@
 package by.javatr.task2.util;
 
-import by.javatr.scanner.DataScanner;
+import by.javatr.validator.Validator;
 import java.util.GregorianCalendar;
 
 public class CalendarHelper {
 
-    public static int enterMonthFromConsole() {
+    public static int countOfDay(int year, int month) throws IllegalArgumentException {
 
-        int month = 0;
+        if (!Validator.validateCountMonth(month)) {
+            throw new IllegalArgumentException("Month number is incorrect");
+        }
 
-        do {
-            month = DataScanner.enterIntFromConsole();
-
-        } while (month > 12 || month < 1);
-
-        return month;
-    }
-
-    public static int enterYearFromConsole() {
-        int year = 0;
-
-        do {
-            year = DataScanner.enterIntFromConsole();
-
-        } while (year < 0);
-
-        return year;
-    }
-
-    public static int countOfDay(int year, int month) {
+        if (!Validator.validateIsYearExist(year)) {
+            throw new IllegalArgumentException("Year is incorrect");
+        }
 
         GregorianCalendar gc = new GregorianCalendar();
 

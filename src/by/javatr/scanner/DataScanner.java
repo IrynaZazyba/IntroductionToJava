@@ -35,31 +35,4 @@ public class DataScanner {
     }
 
 
-
-    @SuppressWarnings("resource")
-    public static double enterPositiveDoubleFromConsole() {
-
-        double d = 0;
-
-        do {
-            d = DataScanner.enterDoubleFromConsole();
-
-        } while (d < 1);
-
-        return d;
-    }
-
-    @SuppressWarnings("resource")
-    public static int enterPositiveIntFromConsole() {
-
-        int d = 0;
-
-        do {
-            d = DataScanner.enterIntFromConsole();
-
-        } while (d < 1);
-
-        return d;
-    }
-
 }

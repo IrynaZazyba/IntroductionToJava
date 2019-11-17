@@ -4,6 +4,13 @@ import by.javatr.scanner.DataScanner;
 import by.javatr.task7.util.Point;
 import by.javatr.task7.util.DistanceSolver;
 
+/**
+ * Даны две точки А(х1, у1) и В(х2, у2).
+ * Составить алгоритм, определяющий,
+ * которая из точек находится ближе
+ * к началу координат. x y.
+ */
+
 public class Runner {
 
     public static void main(String[] args) {

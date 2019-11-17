@@ -1,8 +1,13 @@
 package by.javatr.task9.runner;
 
 import by.javatr.scanner.DataScanner;
-import by.javatr.task8.util.Function;
 import by.javatr.task9.util.Circle;
+
+
+/**
+ * Вычислить длину окружности и площадь
+ * круга одного и того же заданного радиуса R.
+ */
 
 public class Runner {
 

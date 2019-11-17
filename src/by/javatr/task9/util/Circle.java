@@ -2,8 +2,6 @@ package by.javatr.task9.util;
 
 import by.javatr.validator.Validator;
 
-import java.util.Objects;
-
 public class Circle {
 
     private double radius;
@@ -13,6 +11,10 @@ public class Circle {
             throw new IllegalArgumentException("Only positive numbers");
         }
         this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
     }
 
     public double calculateСircumference() {

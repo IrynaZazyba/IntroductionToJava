@@ -1,7 +1,7 @@
 
 package by.javatr.task6.util;
 
-import by.javatr.exeption.NumberSecondsInDayException;
+import by.javatr.exception.NumberSecondsInDayException;
 import by.javatr.validator.Validator;
 
 public class TimeConvertor {
@@ -19,19 +19,6 @@ public class TimeConvertor {
         }
         this.timeInSeconds = timeInSeconds;
 
-    }
-
-
-    public void setHour(int hour) {
-        this.hour = hour;
-    }
-
-    public void setMinute(int minute) {
-        this.minute = minute;
-    }
-
-    public void setSecond(int second) {
-        this.second = second;
     }
 
     public int getHour() {

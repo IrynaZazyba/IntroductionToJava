@@ -14,7 +14,7 @@ public class Function {
 
     public static double calculateFunction(double x) {
 
-        return x >= 3 ? -Math.pow(x, 2) + 3 * x + 9 : 1 / (Math.pow(x, 3) - 6);
+        return (x >= 3) ? (-Math.pow(x, 2) + 3 * x + 9 ): 1 / (Math.pow(x, 3) - 6);
     }
 
 

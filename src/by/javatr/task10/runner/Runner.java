@@ -5,6 +5,14 @@ import by.javatr.task10.printer.ArrayPrinter;
 import by.javatr.task10.util.LineSegment;
 import by.javatr.task8.util.Function;
 
+/**
+ * Составить программу для вычисления значений
+ * функции F(x) на отрезке [а, b] с шагом h.
+ * Результат представить в виде таблицы, первый
+ * столбец которой – значения аргумента, второй
+ * - соответствующие значения функции. F(x)=tg(x)
+ */
+
 public class Runner {
 
     public static void main(String[] args) {
@@ -30,8 +38,6 @@ public class Runner {
         } catch (IllegalArgumentException ex) {
             System.out.println(ex.getMessage());
         }
-
-
 
 
     }
