@@ -17,7 +17,7 @@ public class Runner {
         int j = 0;
         int array[] = new int[4];
         while (j < 4) {
-            System.out.println("Введите число: ");
+            System.out.println("Введите число "+(j+1)+": ");
             array[j] = DataScanner.enterIntFromConsole();
             j++;
         }
