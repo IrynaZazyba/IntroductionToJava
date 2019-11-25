@@ -1,7 +1,6 @@
 
 package by.javatr.task6.util;
 
-import by.javatr.exception.NumberSecondsInDayException;
 import by.javatr.validator.Validator;
 
 public class TimeConvertor {
@@ -12,10 +11,10 @@ public class TimeConvertor {
     private int timeInSeconds;
 
 
-    public TimeConvertor(int timeInSeconds) throws NumberSecondsInDayException {
+    public TimeConvertor(int timeInSeconds) throws IllegalArgumentException {
 
         if (!Validator.validateEnteredSecondsInDay(timeInSeconds)) {
-            throw new NumberSecondsInDayException("Invalid integer value was entered");
+            throw new IllegalArgumentException("Invalid integer value was entered");
         }
         this.timeInSeconds = timeInSeconds;
 
