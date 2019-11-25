@@ -5,7 +5,7 @@ import by.javatr.validator.Validator;
 public class NumberDetector {
 
 
-    public static boolean isNumberPerfect(int param) {
+    public static boolean isNumberPerfect(int param) throws IllegalArgumentException {
 
         if(!Validator.validatePositiveInteger(param)){
             throw new IllegalArgumentException("Entered number have to be positive");

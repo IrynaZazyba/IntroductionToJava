@@ -31,7 +31,7 @@ public class Runner {
 
         try {
             LineSegment ls = new LineSegment(a, b, h);
-            double array[][] = Function.calculateFanctionWithStep(ls);
+            double array[][] = Function.calculateFunctionWithStep(ls);
 
             ArrayPrinter.printMultidimensionalArray(array);
 

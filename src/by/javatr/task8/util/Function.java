@@ -23,7 +23,7 @@ public class Function {
      * на отрезке [a,b] с шагом h
      */
 
-    public static double[][] calculateFanctionWithStep(LineSegment ls) {
+    public static double[][] calculateFunctionWithStep(LineSegment ls) {
 
         double startPoint = ls.getStartPoint();
         double endPoint = ls.getEndPoint();

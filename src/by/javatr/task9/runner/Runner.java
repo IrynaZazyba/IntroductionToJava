@@ -20,7 +20,7 @@ public class Runner {
         try {
             Circle circle = new Circle(radius);
             System.out.printf("Длина окружности равна: %.2f\n", circle.calculateСircumference());
-            System.out.printf("Площадь круга равна: %.2f\n", circle.circleArea());
+            System.out.printf("Площадь круга равна: %.2f\n", circle.calculateCircleArea());
         } catch (IllegalArgumentException ex) {
             System.out.println(ex.getMessage());
         }
