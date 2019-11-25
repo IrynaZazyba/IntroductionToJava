@@ -4,8 +4,6 @@ import by.javatr.validator.Validator;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class ValidatorTest {
 
     @Test

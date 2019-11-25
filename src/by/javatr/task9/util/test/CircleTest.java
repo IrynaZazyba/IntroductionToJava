@@ -4,8 +4,6 @@ import by.javatr.task9.util.Circle;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class CircleTest {
 
     @Test

@@ -5,8 +5,6 @@ import by.javatr.task8.util.Function;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class FunctionTest {
 
     @Test
