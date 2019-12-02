@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class NumericHelperTest {
 
-    @Test
+  /*  @Test
     public void hasTwoEvenNumbersTest_All_Positive_Numbers(){
 
         int [] array={1,2,3,4,5,6,7,8,9};
@@ -43,6 +43,6 @@ public class NumericHelperTest {
 
         Assert.assertFalse(actual);
 
-    }
+    }*/
 
 }

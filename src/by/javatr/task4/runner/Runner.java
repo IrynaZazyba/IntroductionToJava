@@ -9,22 +9,29 @@ import by.javatr.task4.util.NumericHelper;
  * и false — в противном случае: среди заданных
  * целых чисел А, В, С, D есть хотя бы два четных.
  */
-
 public class Runner {
 
     public static void main(String[] args) {
 
-        int j = 0;
-        int array[] = new int[4];
-        while (j < 4) {
-            System.out.println("Введите число "+(j+1)+": ");
-            array[j] = DataScanner.enterIntFromConsole();
-            j++;
-        }
+        int firstNumber;
+        System.out.println("Введите число: ");
+        firstNumber = DataScanner.enterIntFromConsole();
 
-        NumericHelper nh = new NumericHelper(array);
+        int secondNumber;
+        System.out.println("Введите число: ");
+        secondNumber = DataScanner.enterIntFromConsole();
 
-        System.out.println("Результат: " + nh.hasTwoEvenNumbers());
+        int thirdNumber;
+        System.out.println("Введите число: ");
+        thirdNumber= DataScanner.enterIntFromConsole();
+
+        int fourNumber;
+        System.out.println("Введите число: ");
+        fourNumber = DataScanner.enterIntFromConsole();
+
+        System.out.println("Результат: "+NumericHelper.hasTwoEvenNumbers(firstNumber,secondNumber,thirdNumber,fourNumber));
+
+
 
 
     }

@@ -1,8 +1,9 @@
 package by.javatr.task7.runner;
 
+import by.javatr.exception.ImpossibleDetermineClosestToOriginException;
 import by.javatr.scanner.DataScanner;
 import by.javatr.task7.util.Point;
-import by.javatr.task7.util.DistanceSolver;
+import by.javatr.task7.util.PointService;
 
 /**
  * Даны две точки А(х1, у1) и В(х2, у2).
@@ -10,7 +11,6 @@ import by.javatr.task7.util.DistanceSolver;
  * которая из точек находится ближе
  * к началу координат. x y.
  */
-
 public class Runner {
 
     public static void main(String[] args) {
@@ -36,11 +36,13 @@ public class Runner {
 
         Point secondPoint = new Point(secondPointX, secondPointY);
 
+        try {
+            Point closestPoint = PointService.getClosestToOrigin(firstPoint, secondPoint);
 
-        Point closestPoint = DistanceSolver.getClosestToOrigin(firstPoint, secondPoint);
+            System.out.println("Точка с координатами: ( " + closestPoint.getCoordinateX() + " , " + closestPoint.getCoordinateY() + " ) ближе к началу координат.");
 
-        System.out.println("Точка с координатами: ( " + closestPoint.getCoordinateX() + " , " + closestPoint.getCoordinateY() + " ) ближе к началу координат.");
-
-
+        } catch (ImpossibleDetermineClosestToOriginException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 }

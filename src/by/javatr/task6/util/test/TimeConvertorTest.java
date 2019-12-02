@@ -1,6 +1,8 @@
 package by.javatr.task6.util.test;
 
-import by.javatr.task6.util.TimeConvertor;
+import by.javatr.exception.NotPositiveNumberException;
+import by.javatr.task6.util.SecondOfTheDay;
+import by.javatr.task6.util.TimeConvertorService;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -8,18 +10,19 @@ import org.junit.Test;
 
 public class TimeConvertorTest {
 
-    private static TimeConvertor timeConvertor;
+
+    public static SecondOfTheDay secondOfTheDay;
 
     @BeforeClass
-    public static void getConvertor() {
-        timeConvertor = new TimeConvertor(9600);
+    public static void getSecondOfTheDay() throws NotPositiveNumberException {
+        secondOfTheDay=new SecondOfTheDay(9600);
     }
 
     @Test
     public void getHourTest() {
 
         int expected = 2;
-        int actual = timeConvertor.getHour();
+        int actual = TimeConvertorService.getHour(secondOfTheDay);
 
         Assert.assertEquals(expected, actual);
     }
@@ -28,7 +31,7 @@ public class TimeConvertorTest {
     public void getMinuteTest() {
 
         int expected=40;
-        int actual=timeConvertor.getMinute();
+        int actual=TimeConvertorService.getMinute(secondOfTheDay);
 
         Assert.assertEquals(expected,actual);
     }
@@ -37,7 +40,7 @@ public class TimeConvertorTest {
     public void getSecondTest() {
 
         int expected=0;
-        int actual=timeConvertor.getSecond();
+        int actual=TimeConvertorService.getSecond(secondOfTheDay);
 
         Assert.assertEquals(expected,actual);
     }

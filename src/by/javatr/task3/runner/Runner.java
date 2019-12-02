@@ -1,8 +1,8 @@
 package by.javatr.task3.runner;
 
+import by.javatr.exception.NegativeAreaException;
 import by.javatr.scanner.DataScanner;
-import by.javatr.task3.util.Square;
-
+import by.javatr.task3.util.SquareService;
 
 /**
  * Окружность вписана в квадрат заданной площади.
@@ -10,22 +10,21 @@ import by.javatr.task3.util.Square;
  * окружность. Во сколько раз площадь вписанного
  * квадрата меньше площади заданного?
  */
-
 public class Runner {
 
     public static void main(String[] args) {
 
-        double d = 0.0;
+        double area;
         System.out.println("Введите площадь квадрата: ");
-        d = DataScanner.enterDoubleFromConsole();
+        area = DataScanner.enterDoubleFromConsole();
 
         try {
-            Square sq = new Square(d);
+            double inscribedSquareArea=SquareService.calculateAreaSquare(area);
 
-            System.out.println("Площадь вписанного квадрата: " + sq.calculateAreaSquare());
-            System.out.println("Отношение родительского квадрата к дочернему: " + sq.ratioOfAreas());
+            System.out.println("Площадь вписанного квадрата: " + inscribedSquareArea);
+            System.out.println("Отношение родительского квадрата к дочернему: " + SquareService.ratioOfAreas(area,inscribedSquareArea));
 
-        } catch (IllegalArgumentException ex) {
+        } catch (NegativeAreaException ex) {
             System.out.println(ex.getMessage());
         }
 

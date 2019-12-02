@@ -1,14 +1,15 @@
 package by.javatr.task5.util;
 
+import by.javatr.exception.NotPositiveNumberException;
 import by.javatr.validator.Validator;
 
-public class NumberDetector {
+public class NumberHelper {
 
 
-    public static boolean isNumberPerfect(int param) throws IllegalArgumentException {
+    public static boolean isNumberPerfect(int param) throws NotPositiveNumberException {
 
         if(!Validator.validatePositiveInteger(param)){
-            throw new IllegalArgumentException("Entered number have to be positive");
+            throw new NotPositiveNumberException("Entered number have to be positive");
         }
 
         int sum = 0;

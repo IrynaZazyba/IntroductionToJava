@@ -5,6 +5,11 @@ public class Point {
     private double coordinateX;
     private double coordinateY;
 
+    public Point(){
+    this.coordinateX=1;
+    this.coordinateY=1;
+    }
+
     public Point(double coordinateX, double coordinateY) {
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
@@ -18,11 +23,13 @@ public class Point {
         return coordinateY;
     }
 
-    public double distanceToOrigin() {
-
-        return Math.sqrt(Math.pow(coordinateX, 2) + Math.pow(coordinateY, 2));
+    public void setCoordinateX(double coordinateX) {
+        this.coordinateX = coordinateX;
     }
 
+    public void setCoordinateY(double coordinateY) {
+        this.coordinateY = coordinateY;
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -55,3 +62,4 @@ public class Point {
         return "Point[ coordinateX=" + coordinateX + ", coordinateY=" + coordinateY + ']';
     }
 }
+

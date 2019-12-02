@@ -1,9 +1,11 @@
 package by.javatr.task10.runner;
 
+import by.javatr.exception.NoSuchLineSegmentExistException;
+import by.javatr.exception.NotPositiveNumberException;
 import by.javatr.scanner.DataScanner;
 import by.javatr.task10.printer.ArrayPrinter;
 import by.javatr.task10.util.LineSegment;
-import by.javatr.task8.util.Function;
+import by.javatr.task10.util.FunctionService;
 
 /**
  * Составить программу для вычисления значений
@@ -12,7 +14,6 @@ import by.javatr.task8.util.Function;
  * столбец которой – значения аргумента, второй
  * - соответствующие значения функции. F(x)=tg(x)
  */
-
 public class Runner {
 
     public static void main(String[] args) {
@@ -25,17 +26,17 @@ public class Runner {
         System.out.println("Введите значение конца отрезка: ");
         b = DataScanner.enterDoubleFromConsole();
 
-        double h;
+        double step;
         System.out.println("Введите значение шага: ");
-        h = DataScanner.enterDoubleFromConsole();
+        step = DataScanner.enterDoubleFromConsole();
 
         try {
-            LineSegment ls = new LineSegment(a, b, h);
-            double array[][] = Function.calculateFunctionWithStep(ls);
+            LineSegment ls = new LineSegment(a, b);
+            double [][] array = FunctionService.calculateFunctionWithStep(ls, step);
 
             ArrayPrinter.printMultidimensionalArray(array);
 
-        } catch (IllegalArgumentException ex) {
+        } catch (NoSuchLineSegmentExistException | NotPositiveNumberException ex) {
             System.out.println(ex.getMessage());
         }
 

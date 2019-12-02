@@ -1,26 +1,40 @@
 package by.javatr.task10.util;
 
+import by.javatr.exception.NoSuchLineSegmentExistException;
 import by.javatr.validator.Validator;
 
 public class LineSegment {
 
     private double startPoint;
     private double endPoint;
-    private double step;
 
+    public LineSegment() {
+        this.startPoint = 0;
+        this.endPoint = 1;
+    }
 
-    public LineSegment(double startPoint, double endPoint, double step) throws IllegalArgumentException {
+    public LineSegment(double startPoint, double endPoint) throws NoSuchLineSegmentExistException {
         if (!Validator.validateLineSegmentExist(startPoint, endPoint)) {
-            throw new IllegalArgumentException("Such line segment does not exist");
+            throw new NoSuchLineSegmentExistException("Such line segment does not exist");
         }
+        this.startPoint = startPoint;
+        this.endPoint = endPoint;
+    }
 
-        if (!Validator.validatePositiveDouble(step)) {
-            throw new IllegalArgumentException("Step have to be positive number");
+    public void setStartPoint(double startPoint) throws NoSuchLineSegmentExistException {
+        if (!Validator.validateLineSegmentExist(startPoint, this.endPoint)) {
+            throw new NoSuchLineSegmentExistException("Such line segment does not exist");
         }
 
         this.startPoint = startPoint;
+    }
+
+    public void setEndPoint(double endPoint) throws NoSuchLineSegmentExistException {
+        if (!Validator.validateLineSegmentExist(this.startPoint, endPoint)) {
+            throw new NoSuchLineSegmentExistException("Such line segment does not exist");
+        }
+
         this.endPoint = endPoint;
-        this.step = step;
     }
 
     public double getStartPoint() {
@@ -31,10 +45,6 @@ public class LineSegment {
         return endPoint;
     }
 
-    public double getStep() {
-        return step;
-    }
-
 
     @Override
     public boolean equals(Object obj) {
@@ -42,14 +52,12 @@ public class LineSegment {
             return true;
         if (obj == null)
             return false;
-        if(getClass() != obj.getClass())
+        if (getClass() != obj.getClass())
             return false;
         LineSegment other = (LineSegment) obj;
-        if(startPoint!=other.startPoint)
+        if (startPoint != other.startPoint)
             return false;
-        if(endPoint!=other.endPoint)
-            return false;
-        if(step!=other.step)
+        if (endPoint != other.endPoint)
             return false;
         return true;
     }
@@ -60,12 +68,11 @@ public class LineSegment {
         int result = 1;
         result = prime * result + Double.valueOf(startPoint).hashCode();
         result = prime * result + Double.valueOf(endPoint).hashCode();
-        result = prime * result + Double.valueOf(step).hashCode();
         return result;
     }
 
     @Override
     public String toString() {
-        return "LineSegment [startPoint=" + startPoint + ", endPoint=" + endPoint + ", step=" + step + ']';
+        return "LineSegment [startPoint=" + startPoint + ", endPoint=" + endPoint + "]";
     }
 }

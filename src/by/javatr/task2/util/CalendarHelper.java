@@ -1,23 +1,25 @@
 package by.javatr.task2.util;
 
+import by.javatr.exception.IncorrectMonthNumberException;
+import by.javatr.exception.IncorrectYearException;
 import by.javatr.validator.Validator;
 import java.util.GregorianCalendar;
 
 public class CalendarHelper {
 
-    public static int countOfDay(int year, int month) throws IllegalArgumentException {
+    public static int countOfDay(int year, int month) throws IncorrectMonthNumberException, IncorrectYearException {
 
         if (!Validator.validateCountMonth(month)) {
-            throw new IllegalArgumentException("Month number is incorrect");
+            throw new IncorrectMonthNumberException("Month number is incorrect");
         }
 
         if (!Validator.validateIsYearExist(year)) {
-            throw new IllegalArgumentException("Year is incorrect");
+            throw new IncorrectYearException("Year is incorrect");
         }
 
         GregorianCalendar gc = new GregorianCalendar();
 
-        if (gc.isLeapYear(year) & month == 2) {
+        if (gc.isLeapYear(year) && month == 2) {
             return 29;
         } else {
             switch (month) {

@@ -1,14 +1,19 @@
 package by.javatr.task9.util;
 
+import by.javatr.exception.NotPositiveNumberException;
 import by.javatr.validator.Validator;
 
-public class Circle {
+public class Circle implements Area {
 
     private double radius;
 
-    public Circle(double radius) throws IllegalArgumentException {
+    public Circle() {
+        radius = 1;
+    }
+
+    public Circle(double radius) throws NotPositiveNumberException {
         if (!Validator.validatePositiveDouble(radius)) {
-            throw new IllegalArgumentException("Only positive numbers");
+            throw new NotPositiveNumberException("Only positive numbers");
         }
         this.radius = radius;
     }
@@ -17,12 +22,8 @@ public class Circle {
         return radius;
     }
 
-    public double calculateСircumference() {
-        return 2 * Math.PI * radius;
-    }
-
-    public double calculateCircleArea() {
-        return Math.PI * Math.pow(radius, 2);
+    public void setRadius(double radius) {
+        this.radius = radius;
     }
 
     @Override
@@ -49,6 +50,11 @@ public class Circle {
 
     @Override
     public String toString() {
-        return "Circle [" + "radius=" + radius +']';
+        return "Circle [" + "radius=" + radius + ']';
+    }
+
+    @Override
+    public double calculateArea() {
+        return Math.PI * Math.pow(radius, 2);
     }
 }

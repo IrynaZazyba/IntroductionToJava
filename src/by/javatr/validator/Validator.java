@@ -8,7 +8,7 @@ public class Validator {
 
     public static boolean validateEnteredSecondsInDay(int timeInSeconds) {
 
-        return (timeInSeconds < 86400 & timeInSeconds > 0);
+        return (timeInSeconds <= 86400 & timeInSeconds > 0);
 
     }
 
@@ -24,12 +24,10 @@ public class Validator {
         return endPoint > startPoint;
     }
 
-
     public static boolean validateCountMonth(int month) {
         return month <= 12 & month >= 1;
 
     }
-
 
     public static boolean validateIsYearExist(int year) {
         return year > 0;

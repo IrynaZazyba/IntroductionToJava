@@ -1,33 +1,25 @@
-package by.javatr.task8.util;
+package by.javatr.task10.util;
 
-import by.javatr.task10.util.LineSegment;
+import by.javatr.exception.NotPositiveNumberException;
+import by.javatr.validator.Validator;
 
-public class Function {
+public class FunctionService {
 
     final static int NUMBER_OF_COLLUMN = 2;
-
-    /**
-     * Вычисляет значение функции F(x)
-     * при x>=3  ->   -(x*x)+3*x+9
-     * при x<3   ->   1/((x*x*x)-6)
-     */
-
-    public static double calculateFunction(double x) {
-
-        return (x >= 3) ? (-Math.pow(x, 2) + 3 * x + 9 ): 1 / (Math.pow(x, 3) - 6);
-    }
-
 
     /**
      * Вычисляет значение функции F(x)=tg(x)
      * на отрезке [a,b] с шагом h
      */
 
-    public static double[][] calculateFunctionWithStep(LineSegment ls) {
+    public static double[][] calculateFunctionWithStep(LineSegment ls, double step) throws NotPositiveNumberException{
+
+        if(!Validator.validatePositiveDouble(step)){
+            throw new NotPositiveNumberException("Entered number have to be positive");
+        }
 
         double startPoint = ls.getStartPoint();
         double endPoint = ls.getEndPoint();
-        double step = ls.getStep();
 
         int numberOfStep;
         numberOfStep = (int) ((endPoint - startPoint) / step) + 1;

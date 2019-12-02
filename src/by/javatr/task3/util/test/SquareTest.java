@@ -1,34 +1,31 @@
 package by.javatr.task3.util.test;
 
-import by.javatr.task3.util.Square;
+import by.javatr.exception.NegativeAreaException;
+
+import by.javatr.task3.util.SquareService;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class SquareTest {
     @Test
-    public void calculateAreaSquareTest() {
+    public void calculateAreaSquareTest() throws NegativeAreaException {
 
-        double parentAreaSquare = 98.7;
-
-        Square sq = new Square(parentAreaSquare);
+        double area = 98.7;
 
         double expected = 49.35;
-        double actual = sq.calculateAreaSquare();
+        double actual = SquareService.calculateAreaSquare(area);
 
         Assert.assertEquals(expected, actual, .01);
     }
 
     @Test
-    public void ratioOfAreasTest() {
+    public void ratioOfAreasTest() throws NegativeAreaException {
 
-        double parentAreaSquare = 98.7;
-        double area = 49.35;
-
-        Square sq = new Square(parentAreaSquare);
-        sq.calculateAreaSquare();
+        double area = 98.7;
+        double inscribedSquareArea = SquareService.calculateAreaSquare(area);
 
         double expected = 2;
-        double actual = sq.ratioOfAreas();
+        double actual = SquareService.ratioOfAreas(area,inscribedSquareArea);
 
         Assert.assertEquals(expected, actual, .0);
 
