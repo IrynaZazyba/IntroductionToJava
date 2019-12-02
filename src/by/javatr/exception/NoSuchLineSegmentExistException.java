@@ -13,4 +13,8 @@ public class NoSuchLineSegmentExistException extends Exception {
     public NoSuchLineSegmentExistException(String message, Throwable cause) {
         super(message, cause);
     }
+
+    public NoSuchLineSegmentExistException(Throwable cause) {
+        super(cause);
+    }
 }

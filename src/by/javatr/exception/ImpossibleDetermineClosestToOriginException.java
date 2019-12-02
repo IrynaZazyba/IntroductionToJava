@@ -13,4 +13,8 @@ public class ImpossibleDetermineClosestToOriginException extends Exception{
     public ImpossibleDetermineClosestToOriginException(String message, Throwable cause) {
         super(message, cause);
     }
+
+    public ImpossibleDetermineClosestToOriginException(Throwable cause) {
+        super(cause);
+    }
 }

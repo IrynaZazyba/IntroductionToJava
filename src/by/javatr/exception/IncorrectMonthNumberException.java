@@ -13,4 +13,8 @@ public class IncorrectMonthNumberException extends Exception{
     public IncorrectMonthNumberException(String message, Throwable cause) {
         super(message, cause);
     }
+
+    public IncorrectMonthNumberException(Throwable cause) {
+        super(cause);
+    }
 }

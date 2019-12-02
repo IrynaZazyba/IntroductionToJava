@@ -13,4 +13,8 @@ public class IncorrectYearException  extends Exception {
     public IncorrectYearException(String message, Throwable cause) {
         super(message, cause);
     }
+
+    public IncorrectYearException(Throwable cause) {
+        super(cause);
+    }
 }

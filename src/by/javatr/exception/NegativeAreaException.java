@@ -13,4 +13,8 @@ public class NegativeAreaException extends Exception {
     public NegativeAreaException(String message, Throwable cause) {
         super(message, cause);
     }
+
+    public NegativeAreaException(Throwable cause) {
+        super(cause);
+    }
 }
