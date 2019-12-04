@@ -40,9 +40,11 @@ public class Point {
         if (getClass() != obj.getClass())
             return false;
         Point other = (Point) obj;
-        if (coordinateX != other.coordinateX)
+        if (Double.doubleToLongBits(coordinateX) !=
+                Double.doubleToLongBits(other.coordinateX))
             return false;
-        if (coordinateY != other.coordinateY)
+        if (Double.doubleToLongBits(coordinateY )!=
+                Double.doubleToLongBits(other.coordinateY))
             return false;
         return true;
     }
@@ -59,7 +61,9 @@ public class Point {
 
     @Override
     public String toString() {
-        return "Point[ coordinateX=" + coordinateX + ", coordinateY=" + coordinateY + ']';
+        return getClass().getName()+"@"
+                + " coordinateX:" + coordinateX
+                + ", coordinateY:" + coordinateY;
     }
 }
 

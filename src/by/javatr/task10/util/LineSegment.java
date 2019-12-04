@@ -55,9 +55,11 @@ public class LineSegment {
         if (getClass() != obj.getClass())
             return false;
         LineSegment other = (LineSegment) obj;
-        if (startPoint != other.startPoint)
+        if (Double.doubleToLongBits(startPoint) !=
+                Double.doubleToLongBits(other.startPoint))
             return false;
-        if (endPoint != other.endPoint)
+        if (Double.doubleToLongBits(endPoint) !=
+                Double.doubleToLongBits(other.endPoint))
             return false;
         return true;
     }
@@ -73,6 +75,6 @@ public class LineSegment {
 
     @Override
     public String toString() {
-        return "LineSegment [startPoint=" + startPoint + ", endPoint=" + endPoint + "]";
+        return getClass().getName()+"@"+" startPoint: " + startPoint+", endPoint: " + endPoint;
     }
 }

@@ -55,6 +55,7 @@ public class SecondOfTheDay {
 
     @Override
     public String toString() {
-        return "SecondOfTheDay [ timeInSeconds=" + timeInSeconds +']';
+        return getClass().getName()+"@"
+                +" timeInSeconds:" + timeInSeconds;
     }
 }

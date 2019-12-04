@@ -36,6 +36,8 @@ public class Runner {
 
             ArrayPrinter.printMultidimensionalArray(array);
 
+            System.out.println(ls);
+
         } catch (NoSuchLineSegmentExistException | NotPositiveNumberException ex) {
             System.out.println(ex.getMessage());
         }

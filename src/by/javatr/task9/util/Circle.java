@@ -35,7 +35,8 @@ public class Circle implements Area {
         if (getClass() != obj.getClass())
             return false;
         Circle other = (Circle) obj;
-        if (radius != other.radius)
+        if (Double.doubleToLongBits(radius) !=
+                Double.doubleToLongBits(other.radius))
             return false;
         return true;
     }
@@ -50,7 +51,7 @@ public class Circle implements Area {
 
     @Override
     public String toString() {
-        return "Circle [" + "radius=" + radius + ']';
+        return getClass().getName()+"@" + " radius: " + radius + ']';
     }
 
     @Override
